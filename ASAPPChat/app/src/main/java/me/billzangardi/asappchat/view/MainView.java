@@ -5,4 +5,5 @@ package me.billzangardi.asappchat.view;
  */
 
 public interface MainView {
+    void showInvalidMessage();
 }
