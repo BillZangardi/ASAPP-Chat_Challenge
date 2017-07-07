@@ -2,6 +2,8 @@ package me.billzangardi.asappchat.view.impl;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -12,17 +14,22 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.billzangardi.asappchat.R;
+import me.billzangardi.asappchat.model.pojos.Message;
 import me.billzangardi.asappchat.presenter.MainPresenter;
 import me.billzangardi.asappchat.presenter.impl.MainPresenterImpl;
 import me.billzangardi.asappchat.view.MainView;
+import me.billzangardi.asappchat.view.impl.adapters.ChatAdapter;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 
     @BindView(R.id.message_edit_text)
     EditText mEditText;
+    @BindView(R.id.chat)
+    RecyclerView mChatList;
 
     private MainPresenter mPresenter;
-    private List<String> mMessages = new ArrayList<>();
+    private List<Message> mMessages = new ArrayList<>();
+    private ChatAdapter mChatAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mPresenter = new MainPresenterImpl(this);
+        mChatAdapter = new ChatAdapter(this, mMessages);
+        mChatList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mChatList.setAdapter(mChatAdapter);
     }
 
     @OnClick(R.id.btn_send)
@@ -43,13 +53,11 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public void showNewMessage(String message) {
+    public void showNewMessage(Message message) {
+        if (message.getMessageType().equals(Message.MessageType.SENT)) {
+            mEditText.setText("");
+        }
         mMessages.add(message);
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void addMessage(String text) {
-        mMessages.add(text);
+        mChatAdapter.notifyDataSetChanged();
     }
 }

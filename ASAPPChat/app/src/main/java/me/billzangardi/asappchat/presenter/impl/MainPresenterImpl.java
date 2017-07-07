@@ -2,6 +2,7 @@ package me.billzangardi.asappchat.presenter.impl;
 
 import me.billzangardi.asappchat.model.interactor.MainInteractor;
 import me.billzangardi.asappchat.model.interactor.impl.MainInteractorImpl;
+import me.billzangardi.asappchat.model.pojos.Message;
 import me.billzangardi.asappchat.presenter.MainPresenter;
 import me.billzangardi.asappchat.view.MainView;
 
@@ -21,7 +22,7 @@ public class MainPresenterImpl implements MainPresenter, MainInteractorImpl.Call
     @Override
     public void onSendClick(String text) {
         if(text != null && text.trim().length() > 0) {
-            mView.addMessage(text);
+            mView.showNewMessage(new Message(Message.MessageType.SENT, text));
             mInteractor.sendMessage(text);
         } else {
             mView.showInvalidMessage();
@@ -30,6 +31,6 @@ public class MainPresenterImpl implements MainPresenter, MainInteractorImpl.Call
 
     @Override
     public void onMessageReceived(String message) {
-        mView.showNewMessage(message);
+        mView.showNewMessage(new Message(Message.MessageType.RECEIVED, message));
     }
 }
