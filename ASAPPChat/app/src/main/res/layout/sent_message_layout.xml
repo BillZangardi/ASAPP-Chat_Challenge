@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#D3D3D3">
+    android:layout_margin="4dp"
+    android:paddingLeft="32dp"
+    android:paddingStart="32dp"
+    tools:ignore="RtlSymmetry">
 
-    <include layout="@layout/message_layout" />
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/rounded_corner_grey">
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="4dp"
+            android:textAlignment="textEnd"
+            android:textSize="16sp"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus finibus ullamcorper. Duis erat dui, finibus eget rutrum sed, varius eu enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus." />
+
+    </FrameLayout>
 
 </FrameLayout>
