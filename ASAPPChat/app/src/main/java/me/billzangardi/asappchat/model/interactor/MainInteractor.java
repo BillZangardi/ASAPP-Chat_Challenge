@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat.model;
+package me.billzangardi.asappchat.model.interactor;
 
 /**
  * Created by zangardiw on 7/7/17.

@@ -2,4 +2,5 @@
     <string name="app_name">ASAPP Chat</string>
     <string name="new_message">New Message</string>
     <string name="send">Send</string>
+    <string name="invalid_input">Invalid Input</string>
 </resources>
