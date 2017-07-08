@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.billzangardi.simplechat.R;
+import me.billzangardi.simplechat.Utils.UiUtils;
 import me.billzangardi.simplechat.model.pojos.Message;
 import me.billzangardi.simplechat.presenter.MainPresenter;
 import me.billzangardi.simplechat.presenter.impl.MainPresenterImpl;
@@ -40,6 +41,15 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mChatAdapter = new ChatAdapter(this, mMessages);
         mChatList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mChatList.setAdapter(mChatAdapter);
+
+        //hide keyboard on scroll of message
+        mChatList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                UiUtils.hideKeyboard(MainActivity.this);
+            }
+        });
     }
 
     @OnClick(R.id.btn_send)
@@ -59,5 +69,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
         }
         mMessages.add(message);
         mChatAdapter.notifyDataSetChanged();
+        mChatList.scrollToPosition(mMessages.size() - 1);
     }
 }

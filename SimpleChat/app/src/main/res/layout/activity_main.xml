@@ -11,7 +11,7 @@
         android:id="@+id/chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="24dp"
+        android:layout_marginBottom="44dp"
         android:scrollbars="vertical"
         app:layoutManager="LinearLayoutManager" />
 
@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:background="@color/white"
         android:orientation="horizontal"
         android:weightSum="5">
 
@@ -33,6 +34,7 @@
             android:id="@+id/btn_send"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:text="@string/send" />
     </LinearLayout>
