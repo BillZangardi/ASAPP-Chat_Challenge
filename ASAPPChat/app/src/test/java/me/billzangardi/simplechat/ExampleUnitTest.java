@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat;
+package me.billzangardi.simplechat;
 
 import org.junit.Test;
 

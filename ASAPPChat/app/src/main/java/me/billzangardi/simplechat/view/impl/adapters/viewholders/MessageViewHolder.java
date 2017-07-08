@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat.view.impl.adapters.viewholders;
+package me.billzangardi.simplechat.view.impl.adapters.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import me.billzangardi.asappchat.R;
-import me.billzangardi.asappchat.model.pojos.Message;
+import me.billzangardi.simplechat.R;
+import me.billzangardi.simplechat.model.pojos.Message;
 
 /**
  * Created by zangardiw on 7/7/17.

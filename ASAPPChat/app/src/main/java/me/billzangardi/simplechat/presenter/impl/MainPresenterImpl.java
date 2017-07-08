@@ -1,10 +1,10 @@
-package me.billzangardi.asappchat.presenter.impl;
+package me.billzangardi.simplechat.presenter.impl;
 
-import me.billzangardi.asappchat.model.interactor.MainInteractor;
-import me.billzangardi.asappchat.model.interactor.impl.MainInteractorImpl;
-import me.billzangardi.asappchat.model.pojos.Message;
-import me.billzangardi.asappchat.presenter.MainPresenter;
-import me.billzangardi.asappchat.view.MainView;
+import me.billzangardi.simplechat.model.interactor.MainInteractor;
+import me.billzangardi.simplechat.model.interactor.impl.MainInteractorImpl;
+import me.billzangardi.simplechat.model.pojos.Message;
+import me.billzangardi.simplechat.presenter.MainPresenter;
+import me.billzangardi.simplechat.view.MainView;
 
 /**
  * Created by zangardiw on 7/7/17.

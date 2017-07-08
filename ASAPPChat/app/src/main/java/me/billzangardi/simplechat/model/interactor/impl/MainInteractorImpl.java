@@ -1,6 +1,6 @@
-package me.billzangardi.asappchat.model.interactor.impl;
+package me.billzangardi.simplechat.model.interactor.impl;
 
-import me.billzangardi.asappchat.model.interactor.MainInteractor;
+import me.billzangardi.simplechat.model.interactor.MainInteractor;
 
 /**
  * Created by zangardiw on 7/7/17.

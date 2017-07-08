@@ -14,7 +14,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
-        applicationId "me.billzangardi.asappchat"
+        applicationId "me.billzangardi.simplechat"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1

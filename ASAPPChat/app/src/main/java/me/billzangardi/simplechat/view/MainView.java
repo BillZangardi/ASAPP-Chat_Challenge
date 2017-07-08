@@ -1,6 +1,6 @@
-package me.billzangardi.asappchat.view;
+package me.billzangardi.simplechat.view;
 
-import me.billzangardi.asappchat.model.pojos.Message;
+import me.billzangardi.simplechat.model.pojos.Message;
 
 /**
  * Created by zangardiw on 7/7/17.

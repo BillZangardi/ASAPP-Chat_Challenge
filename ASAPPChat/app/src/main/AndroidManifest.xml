@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.billzangardi.asappchat">
+    package="me.billzangardi.simplechat">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.impl.MainActivity">
+        <activity android:name="me.billzangardi.simplechat.view.impl.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

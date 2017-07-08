@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat;
+package me.billzangardi.simplechat;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

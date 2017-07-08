@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat.model.pojos;
+package me.billzangardi.simplechat.model.pojos;
 
 /**
  * Created by zangardiw on 7/7/17.

@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat.view.impl;
+package me.billzangardi.simplechat.view.impl;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,12 +13,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import me.billzangardi.asappchat.R;
-import me.billzangardi.asappchat.model.pojos.Message;
-import me.billzangardi.asappchat.presenter.MainPresenter;
-import me.billzangardi.asappchat.presenter.impl.MainPresenterImpl;
-import me.billzangardi.asappchat.view.MainView;
-import me.billzangardi.asappchat.view.impl.adapters.ChatAdapter;
+import me.billzangardi.simplechat.R;
+import me.billzangardi.simplechat.model.pojos.Message;
+import me.billzangardi.simplechat.presenter.MainPresenter;
+import me.billzangardi.simplechat.presenter.impl.MainPresenterImpl;
+import me.billzangardi.simplechat.view.MainView;
+import me.billzangardi.simplechat.view.impl.adapters.ChatAdapter;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 

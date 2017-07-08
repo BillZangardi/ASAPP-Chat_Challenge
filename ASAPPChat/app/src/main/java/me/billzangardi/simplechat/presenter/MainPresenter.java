@@ -1,4 +1,4 @@
-package me.billzangardi.asappchat.presenter;
+package me.billzangardi.simplechat.presenter;
 
 /**
  * Created by zangardiw on 7/7/17.
