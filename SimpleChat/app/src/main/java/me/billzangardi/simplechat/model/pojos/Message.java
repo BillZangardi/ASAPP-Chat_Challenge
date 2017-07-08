@@ -5,13 +5,21 @@ package me.billzangardi.simplechat.model.pojos;
  */
 
 public class Message {
+
     public enum MessageType {
         SENT,
         RECEIVED
     }
 
-    MessageType messageType = MessageType.SENT;
-    String text;
+    public enum ContentType {
+        PLAIN_TEXT,
+        MULTIMEDIA,
+        BILL
+    }
+
+    private MessageType messageType = MessageType.SENT;
+    private String text;
+    private ContentType contentType = ContentType.PLAIN_TEXT;
 
     public Message(MessageType messageType, String text) {
         this.messageType = messageType;
@@ -24,5 +32,9 @@ public class Message {
 
     public MessageType getMessageType() {
         return messageType;
+    }
+
+    public ContentType getContentType() {
+        return contentType;
     }
 }

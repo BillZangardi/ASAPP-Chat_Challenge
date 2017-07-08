@@ -70,6 +70,7 @@ public class ChatAdapter extends RecyclerView.Adapter {
         // If the bound view wasn't previously displayed on screen, it's animated
         if (position > lastPosition) {
             Animation animation = AnimationUtils.loadAnimation(mContext, android.R.anim.fade_in);
+            animation.setDuration(1500);
             viewToAnimate.startAnimation(animation);
             lastPosition = position;
         }

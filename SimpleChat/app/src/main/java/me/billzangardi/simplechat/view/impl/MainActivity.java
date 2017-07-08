@@ -1,9 +1,11 @@
 package me.billzangardi.simplechat.view.impl;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -42,14 +44,21 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mChatList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mChatList.setAdapter(mChatAdapter);
 
-        //hide keyboard on scroll of message
+        //hide keyboard on scroll to older messages
         mChatList.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                UiUtils.hideKeyboard(MainActivity.this);
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy < 0) {
+                    UiUtils.hideKeyboard(MainActivity.this);
+                }
             }
         });
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(R.layout.center_title_layout);
+        actionBar.setTitle(getString(R.string.chat_with_us));
+
     }
 
     @OnClick(R.id.btn_send)

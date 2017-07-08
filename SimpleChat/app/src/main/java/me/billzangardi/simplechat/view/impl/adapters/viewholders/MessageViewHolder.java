@@ -24,6 +24,10 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setMessage(Message message) {
-        mMessage.setText(message.getText());
+        switch (message.getContentType()) {
+            case PLAIN_TEXT:
+                mMessage.setText(message.getText());
+                break;
+        }
     }
 }
